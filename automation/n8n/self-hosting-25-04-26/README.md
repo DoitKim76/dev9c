@@ -49,26 +49,19 @@ Docker Desktop에서 검색창에 "n8n"을 검색하고, 가장 많이 다운로
 
 - **컨테이너 이름**: 원하는 이름 지정 (예: n8n-docker)
 - **포트**: 5678
-- **호스트 경로**: 로컬 컴퓨터에 n8n 관련 데이터를 저장할 경로 지정 (예: n8n-data 폴더)
+- **호스트 경로**: D:\n8n-data
 - **컨테이너 경로**: `/home/node/.n8n`
 
 Docker Desktop의 UI를 통해 설정하거나, 다음 명령어로 실행할 수 있습니다:
 
-```bash
-# 맥/리눅스
-docker run --rm \
-  --name n8n-docker \
-  -p 5678:5678 \
-  -v /path/to/your/n8n-data:/home/node/.n8n \
-  n8nio/n8n:latest
-```
+
 
 ```powershell
 # 윈도우
 docker run --rm `
   --name n8n-docker `
   -p 5678:5678 `
-  -v /c/path/to/your/n8n-data:/home/node/.n8n `
+  -v /d/n8n-data:/home/node/.n8n `
   n8nio/n8n:latest
 ```
 
@@ -131,7 +124,8 @@ docker run --rm \
 docker run --rm `
   --name n8n-docker `
   -p 5678:5678 `
-  -v /c/path/to/your/n8n-data:/home/node/.n8n `
+  -v /d/n8n-data:/home/node/.n8n `
+  n8nio/n8n:latest
   -e WEBHOOK_URL=<임시_URL> `
   n8nio/n8n:latest
 ```
